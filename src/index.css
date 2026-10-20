@@ -1,0 +1,237 @@
+/* src/index.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #f4f6f4;
+  color: #2b2b2b;
+}
+
+/* Cabeçalho Institucional que ocupa toda a largura mas limita o conteúdo interno */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #539839; /* Verde IFRN */
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  max-width: 1000px;
+  margin: 0 auto;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.header a {
+  color: #ffffff;
+}
+
+.usuario-info {
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+}
+
+/* Container Principal CENTRALIZADO */
+.page-container {
+  padding: 2rem 1rem;
+  max-width: 600px; /* Largura perfeita para alinhar detalhes e formulários */
+  margin: 0 auto; /* Centraliza horizontalmente na tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h3 {
+  color: #2e5a1e;
+}
+
+/* Campos de Busca e Filtros */
+.filters-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+input, select, textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #ffffff;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #539839;
+  box-shadow: 0 0 0 2px rgba(83, 152, 57, 0.2);
+}
+
+.filters-container input {
+  min-width: 200px;
+}
+
+/* Botões */
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #539839; /* Verde IFRN */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #427c2e;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+button.btn-danger {
+  background-color: #B93120; /* Vermelho IFRN */
+}
+
+button.btn-danger:hover {
+  background-color: #962618;
+}
+
+/* Grade de Cards na Tela Inicial */
+.grid-itens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.item-card {
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #539839;
+}
+
+/* Badges / Tags de Status */
+.status-tag {
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-tag.aguardando {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.status-tag.devolvido {
+  background-color: #e2f0dc;
+  color: #2e5a1e;
+  border: 1px solid #c8e3bb;
+}
+
+/* Formulário Centralizado */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.form-container label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Mensagens de Feedback */
+.mensagem.erro, .erro-msg {
+  color: #B93120;
+  font-weight: 500;
+  text-align: center;
+}
+
+.mensagem.sucesso {
+  color: #539839;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Caixas da Tela de Detalhes (Devolver / Confirmar) Centralizadas */
+.box-confirmacao, .box-devolver {
+  width: 100%;
+  max-width: 500px;
+  margin: 1.5rem auto 0 auto;
+  padding: 1.2rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.box-confirmacao {
+  border: 1px solid #B93120;
+  background: #fdf2f1;
+}
+
+.box-devolver {
+  border: 1px dashed #539839;
+  background: #ffffff;
+}
